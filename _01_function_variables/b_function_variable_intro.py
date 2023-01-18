@@ -8,20 +8,33 @@ def surprise():
     return 'SURPRISE!'
 
 # TODO 1) Change what is assigned into the func_1 variable so test_1 will pass
-func_1 = None
+def func_1_func():
+    return "SURPRISE!"
+func_1 = func_1_func
 
 # TODO 2) Change the return statement below so that test_2 will pass
 def pizza_surprise():
-    return None
+    return "SURPRISE, here's a pizza!"
 
 # TODO 3) Implement the birthday_surprise function so that test_3 will pass
 def birthday_surprise(years_old):
-    return None
+    suffix = "th"
+    years_old_str = str(years_old)
+    if years_old_str.endswith("1") and years_old_str != "11":
+        suffix = "st"
+    elif years_old_str.endswith("2") and years_old_str != "12":
+        suffix = "nd"
+    elif years_old_str.endswith("3") and years_old_str != "13":
+        suffix = "rd"
+    return "SURPRISE, Happy " + years_old_str + suffix + " birthday!!!"
 
 # TODO 4) Implement the surprise_guests function so that test_3 will pass
 #  *HINT* You will have to add input parameters to the function
-def surprise_guests():
-    return None
+def surprise_guests(func, guests):
+    final = ""
+    for guest in guests:
+        final += guest + " says " + func() + "\n"
+    return final
 
 # ================== DO NOT MODIFY THE CODE BELOW ============================
 
